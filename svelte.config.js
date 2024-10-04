@@ -7,9 +7,7 @@ const config = {
     preprocess: vitePreprocess(),
 
     kit: {
-        adapter: adapter({
-            runtime: 'nodejs18.x'
-        }),
+        adapter: adapter(),  // Remove the runtime specification
         alias: {
             '~': path.resolve('./src')
         }
