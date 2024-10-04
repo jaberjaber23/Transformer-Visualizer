@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,9 +8,11 @@ const config = {
 
     kit: {
         adapter: adapter({
-            // Vercel Edge Functions are not yet supported with SvelteKit
             runtime: 'nodejs18.x'
-        })
+        }),
+        alias: {
+            '~': path.resolve('./src')
+        }
     }
 };
 

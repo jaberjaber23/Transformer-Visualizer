@@ -10,7 +10,7 @@
 	let topBarHeight = 0;
 
 	let minScreenWidth = 1300;
-	let minColumWidth = Math.floor(minScreenWidth / 24) - rootRem * 2;
+	let minColumWidth = Math.floor(minScreenWidth / 24) - rootRem * 2;'~/styles/app.css'
 
 	let intersectionObserver: IntersectionObserver;
 	let tobBarActive = false;
