@@ -7,13 +7,9 @@ const config = {
 
     kit: {
         adapter: adapter({
-            // Remove custom output directories
-            // The adapter will use the default output directory
-            // pages: 'build',   // REMOVE THIS LINE
-            // assets: 'build',  // REMOVE THIS LINE
             fallback: null,
             precompress: false,
-            strict: false // Ignore errors about dynamic routes
+            strict: false
         }),
         prerender: {
             entries: ['/' /* other routes if needed */]
