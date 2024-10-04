@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -7,11 +7,9 @@ const config = {
 
     kit: {
         adapter: adapter({
-            // Specify the output directory for Vercel
-            out: 'build', // Vercel can serve from this directory
-            fallback: null, // Set to 'index.html' if you want a fallback for SPA
-            precompress: false,
-            strict: false
+            // Vercel will use its default output directory
+            // No need to specify 'out' for Vercel adapter
+            fallback: 'app.html' // For SPA-style routing
         }),
         prerender: {
             entries: ['/'] // Add your routes here
