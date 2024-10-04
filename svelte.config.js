@@ -7,15 +7,17 @@ const config = {
 
     kit: {
         adapter: adapter({
-            fallback: null,
+            // Specify the output directory for Vercel
+            out: 'build', // Vercel can serve from this directory
+            fallback: null, // Set to 'index.html' if you want a fallback for SPA
             precompress: false,
             strict: false
         }),
         prerender: {
-            entries: ['/' /* other routes if needed */]
+            entries: ['/'] // Add your routes here
         },
         alias: {
-            '~': './src'
+            '~': './src' // Alias for imports
         },
         paths: {
             base: process.env.NODE_ENV === 'production' ? '/transformer-explainer' : ''
