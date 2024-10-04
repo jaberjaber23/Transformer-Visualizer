@@ -6,7 +6,10 @@ const config = {
     preprocess: vitePreprocess(),
 
     kit: {
-        adapter: adapter()
+        adapter: adapter({
+            // Vercel Edge Functions are not yet supported with SvelteKit
+            runtime: 'nodejs18.x'
+        })
     }
 };
 
